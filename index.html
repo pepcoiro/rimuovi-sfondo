@@ -16,21 +16,27 @@
 </header>
 <main>
   <div class="upload">
-    <p style="margin:0">Rimuovi lo sfondo da un logo e scaricalo in PNG.</p>
+    <p class="intro">Rimuovi lo sfondo da un logo e scaricalo in PNG.</p>
     <button class="action" id="chooseBtn">Apri immagine</button>
   </div>
   <div id="dropZone">
     <div id="placeholder"><p>Trascina qui un'immagine oppure clicca su “Apri immagine”.</p><p>JPG, PNG o WebP</p></div>
-    <div id="canvasWrap"><canvas id="resultCanvas"></canvas></div>
+    <div id="canvasWrap"><canvas id="resultCanvas" data-preview="checker"></canvas></div>
   </div>
-  <div class="small" id="imageInfo" style="margin-top:8px"></div>
+  <div class="small image-info" id="imageInfo"></div>
+  <div class="preview-options" aria-label="Sfondo dell'anteprima">
+    <span>Anteprima:</span>
+    <button class="action preview-btn" type="button" data-preview-choice="checker" aria-pressed="true">Scacchiera</button>
+    <button class="action preview-btn" type="button" data-preview-choice="white" aria-pressed="false">Bianco</button>
+    <button class="action preview-btn" type="button" data-preview-choice="black" aria-pressed="false">Nero</button>
+  </div>
   <div class="controls">
     <div class="control">
       <label for="colorPicker">Colore da rimuovere</label>
       <div class="colorline">
         <input type="color" id="colorPicker" value="#ffffff" aria-label="Colore da rimuovere">
         <button class="action" id="sampleBtn" disabled>Contagocce</button>
-        <button class="action" id="edgeBtn" disabled>Bordi</button>
+        <button class="action" id="edgeBtn" disabled>Auto</button>
       </div>
     </div>
     <div class="control">
@@ -38,7 +44,7 @@
       <input id="tolerance" type="range" min="0" max="150" value="32">
     </div>
     <div class="control">
-      <label for="softness">Bordi <span class="value" id="softnessValue">18</span></label>
+      <label for="softness">Sfumatura <span class="value" id="softnessValue">18</span></label>
       <input id="softness" type="range" min="0" max="80" value="18">
     </div>
     <label class="check"><input type="checkbox" id="allSimilar"><span>Rimuovi lo stesso colore anche nelle aree interne.</span></label>
@@ -48,7 +54,7 @@
     <button class="action" id="resetBtn" disabled>Ripristina</button>
     <button class="action" id="replaceBtn" hidden>Sostituisci immagine</button>
   </div>
-  <div id="status">Nessuna immagine selezionata.</div>
+  <div id="status" aria-live="polite">Nessuna immagine selezionata.</div>
   <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp">
 </main>
 <script src="script.js" defer></script>
