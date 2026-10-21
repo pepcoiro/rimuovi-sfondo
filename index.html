@@ -57,7 +57,9 @@
   <div id="status" aria-live="polite">Nessuna immagine selezionata.</div>
   <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp">
 </main>
-<footer class="site-footer">@ 2026 <a href="https://pepcoiro.github.io/website/">Giuseppe Coiro</a></footer>
+<footer class="site-footer"><a href="https://pepcoiro.github.io/website/" data-current-year>@ 2026 Giuseppe Coiro</a></footer>
 <script src="script.js" defer></script>
+
+<script>document.querySelectorAll("[data-current-year]").forEach(function(link){link.textContent="@ "+new Date().getFullYear()+" Giuseppe Coiro";});</script>
 </body>
 </html>
