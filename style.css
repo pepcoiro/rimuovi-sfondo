@@ -40,3 +40,5 @@ input[type=color]{width:36px;height:30px;padding:2px;border:1px solid var(--mute
 .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 #status{font-size:14px;color:var(--muted);margin-top:12px;min-height:20px}
 @media(max-width:520px){body{padding:24px 18px}.controls{grid-template-columns:1fr;gap:16px}.upload{align-items:flex-start;flex-direction:column}#dropZone{min-height:180px}}
+
+.site-footer{max-width:600px;margin:24px auto 0;padding-top:12px;border-top:1px solid rgba(229,229,226,.2);text-align:center;color:var(--muted);font-size:13px;line-height:1.5}.site-footer a{color:inherit;text-decoration:underline;text-underline-offset:3px}.site-footer a:hover{opacity:.7}
